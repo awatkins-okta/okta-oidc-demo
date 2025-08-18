@@ -63,7 +63,7 @@ loginButton.addEventListener('click', () => {
 });
 
 logoutButton.addEventListener('click', () => {
-    authClient.signOut(); // This will redirect to Okta to end the session
+    authClient.signOut(postLogoutRedirectUri:'https://awatkins-okta.github.io/okta-oidc-demo/'); // This will redirect to Okta to end the session
 });
 
 // Run the authentication check when the page loads
