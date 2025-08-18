@@ -15,6 +15,7 @@ const loggedInView = document.getElementById('logged-in-view');
 const loginButton = document.getElementById('login-button');
 const logoutButton = document.getElementById('logout-button');
 const userProfile = document.getElementById('user-profile');
+const userScopes = document.getElementById('user-scopes');
 
 // Function to update the UI based on authentication state
 const updateUI = async () => {
@@ -24,7 +25,17 @@ const updateUI = async () => {
         loggedOutView.style.display = 'none';
         loggedInView.style.display = 'block';
         const user = await authClient.getUser();
-        userProfile.textContent = JSON.stringify(user, null, 2);
+        // Get the access token from the token manager
+        const accessToken = authClient.tokenManager.getSync('accessToken');
+        const grantedScopes = accessToken ? accessToken.scopes : [];
+        
+        // Create a new object to display both profile and scopes
+        const displayData = {
+            userInfo: user,
+            grantedScopes: grantedScopes
+        };
+        userProfile.textContent = JSON.stringify(displayData, null, 2);
+        
     } else {
         // User is logged out
         loggedOutView.style.display = 'block';
