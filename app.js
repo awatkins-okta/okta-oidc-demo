@@ -63,7 +63,11 @@ loginButton.addEventListener('click', () => {
 });
 
 logoutButton.addEventListener('click', () => {
-    authClient.signOut(); // This will redirect to Okta to end the session
+    // Explicitly provide the post-logout redirect URI to fix the issue.
+    // This uses the same redirectUri defined in your oktaConfig.
+    authClient.signOut({
+        postLogoutRedirectUri: oktaConfig.redirectUri
+    });
 });
 
 // Run the authentication check when the page loads
