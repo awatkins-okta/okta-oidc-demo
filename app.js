@@ -15,7 +15,6 @@ const loggedInView = document.getElementById('logged-in-view');
 const loginButton = document.getElementById('login-button');
 const logoutButton = document.getElementById('logout-button');
 const userProfile = document.getElementById('user-profile');
-const userScopes = document.getElementById('user-scopes');
 
 // Function to update the UI based on authentication state
 const updateUI = async () => {
