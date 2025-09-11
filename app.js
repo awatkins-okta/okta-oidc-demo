@@ -1,12 +1,12 @@
 // ⚠️ PASTE YOUR OKTA CONFIGURATION HERE
 const oktaConfig = {
     //OIE Config
-    //issuer: 'https://awatkins-oie.oktapreview.com/oauth2/default', // e.g., https://dev-12345.okta.com/oauth2/default
-    //clientId: '0oap9k1jqdu3opdfb1d7', // The Client ID you copied from Okta
+    issuer: 'https://awatkins-oie.oktapreview.com/oauth2/default', // e.g., https://dev-12345.okta.com/oauth2/default
+    clientId: '0oap9k1jqdu3opdfb1d7', // The Client ID you copied from Okta
 
     //Classic config
-    issuer: 'https://awatkins.okta.com/oauth2/default', // e.g., https://dev-12345.okta.com/oauth2/default
-    clientId: '0oav9yh48rdhUxFli697', // The Client ID you copied from Okta
+    //issuer: 'https://awatkins.okta.com/oauth2/default', // e.g., https://dev-12345.okta.com/oauth2/default
+    //clientId: '0oav9yh48rdhUxFli697', // The Client ID you copied from Okta
     
     redirectUri: window.location.origin + window.location.pathname, // This uses the current page URL
     scopes: ['openid', 'profile', 'email', 'offline_access']
