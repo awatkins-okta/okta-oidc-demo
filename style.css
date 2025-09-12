@@ -13,6 +13,9 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
+    width: 100%; 
+    max-width: 600px; 
+    box-sizing: border-box;
 }
 button {
     background-color: #0072b1;
@@ -33,4 +36,5 @@ pre {
     text-align: left;
     white-space: pre-wrap;
     word-wrap: break-word;
+    word-break: break-all;
 }
