@@ -32,6 +32,12 @@ const updateUI = async () => {
         const user = await authClient.getUser();
         // Get the access token from the token manager
         const accessToken = authClient.tokenManager.getSync('accessToken');
+        const tokenData = {
+            authorizationCode: authorizationCode,
+            accessToken: accessToken.accessToken // Display the raw token string
+        };
+        tokenDisplay.textContent = JSON.stringify(tokenData, null, 2);
+        
         const grantedScopes = accessToken ? accessToken.scopes : [];
         
         // Create a new object to display both profile and scopes
@@ -51,6 +57,11 @@ const updateUI = async () => {
 
 // Handle the redirect callback from Okta
 const handleAuth = async () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('code')) {
+        authorizationCode = urlParams.get('code');
+    }
+    
     // Check if the URL contains authentication tokens
     if (authClient.isLoginRedirect()) {
         try {
