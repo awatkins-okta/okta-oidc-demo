@@ -52,6 +52,7 @@ const updateUI = async () => {
         loggedOutView.style.display = 'block';
         loggedInView.style.display = 'none';
         userProfile.textContent = '';
+        tokenDisplay.textContent = '';
     }
 };
 
