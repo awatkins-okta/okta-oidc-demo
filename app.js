@@ -22,6 +22,7 @@ const loginButton = document.getElementById('login-button');
 const logoutButton = document.getElementById('logout-button');
 const userProfile = document.getElementById('user-profile');
 const tokenDisplay = document.getElementById('token-display');
+let authorizationCode = 'Not captured (only available on initial redirect)';
 
 // Function to update the UI based on authentication state
 const updateUI = async () => {
